@@ -7,6 +7,7 @@ require (
 	github.com/getkin/kin-openapi v0.61.0
 	github.com/labstack/echo/v4 v4.2.1
 	github.com/pkg/term v1.1.0
+	github.com/radovskyb/watcher v1.0.7 // indirect
 	github.com/snksoft/crc v1.1.0
 	github.com/stretchr/testify v1.7.0
 )

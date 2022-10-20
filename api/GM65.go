@@ -6,6 +6,7 @@ import (
 	"sync"
 
 	"bezahl.online/gm65/device"
+	"bezahl.online/gm65/param"
 	"github.com/labstack/echo/v4"
 )
 
@@ -24,7 +25,10 @@ func init() {
 	fmt.Println("init")
 	testServer := &API{}
 	RegisterHandlers(e, testServer)
-	go scanner.Connect()
+	if !*param.Disconnected {
+		go scanner.Connect()
+	}
+	go TANFileWatcher(&scanner)
 }
 
 // GetTest returns status ok
